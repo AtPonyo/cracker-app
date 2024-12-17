@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christmas Cracker</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- メッセージ表示エリア -->
+      <div id="message-display"></div>
+
+      <h1 id="cracker-title">🎄 Christmas Cracker 🎄</h1>
+
+      <!-- メッセージ入力フォーム -->
+      <div class="message-form">
+        <input
+          type="text"
+          id="user-message"
+          placeholder="名前を入力してください"
+        />
+        <button id="send-message">決定</button>
+      </div>
+
+      <!-- クラッカーボタン -->
+      <button id="cracker-btn">🎉 Tap Me! 🎉</button>
+
+      <canvas id="confetti-canvas"></canvas>
+
+      <button id="like-button">いいね</button>
+      <p>いいね数: <span id="like-count">0</span></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
