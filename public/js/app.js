@@ -20,8 +20,9 @@ document.getElementById("send-message").addEventListener("click", () => {
   }
 });
 
-// クラッカーボタン
+// クラッカーボタンとサウンド
 const crackerButton = document.getElementById("cracker-btn");
+const crackerSound = document.getElementById("cracker-sound");
 
 // 紙吹雪アニメーション用のキャンバス
 const canvas = document.getElementById("confetti-canvas");
@@ -46,9 +47,16 @@ crackerButton.addEventListener("click", () => {
   // 1. ボタンに震えるクラスを追加
   crackerButton.classList.add("shake");
 
-  // 2. 震えが終わったらクラッカーを実行
+  // 2. 震えが終わったらクラッカー（サウンド付き）を実行
   setTimeout(() => {
     crackerButton.classList.remove("shake"); // 震え終了
+
+    if (crackerSound) {
+      crackerSound.currentTime = 0;
+      crackerSound.play().catch((error) => {
+        console.log("Audio playback failed:", error);
+      });
+    }
 
     // クラッカーアニメーションを遅延実行
     triggerConfetti();
